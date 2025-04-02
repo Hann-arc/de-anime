@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { IoIosSearch } from "react-icons/io";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoMdClose } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,23 +12,41 @@ const Navbar = () => {
   return (
     <>
       <div className="flex justify-between items-center text-white bg-[#222222] md:p-3 p-5 w-full">
-     
         <div className="flex items-center gap-x-6">
           <RxHamburgerMenu
             size={24}
             className="cursor-pointer md:hidden"
             onClick={toggleMenu}
           />
-          <a href="/" className="font-bold text-orange-500 cursor-pointer" >De-Anime</a>
-          <a href="/recent" className="py-3 hover:text-orange-500 transition-colors hidden md:block cursor-pointer">Baru</a>
-          <a href="/populer" className="py-3 hover:text-orange-500 transition-colors hidden md:block cursor-pointer">Populer</a>
-          <a href="/completed" className="py-3 hover:text-orange-500 transition-colors hidden md:block cursor-pointer">Tamat</a>
-          <a href="/schedule" className="py-3 hover:text-orange-500 transition-colors hidden md:block cursor-pointer">Jadwal Rilis</a>
+          <Link to="/" className="font-bold text-orange-500 cursor-pointer">
+            De-Anime
+          </Link>
+          <Link to="/recent"
+            className="py-3 hover:text-orange-500 transition-colors hidden md:block cursor-pointer"
+          >
+            Baru
+          </Link>
+          <Link to="/populer"
+            className="py-3 hover:text-orange-500 transition-colors hidden md:block cursor-pointer"
+          >
+            Populer
+          </Link>
+          <Link to="/completed"
+            className="py-3 hover:text-orange-500 transition-colors hidden md:block cursor-pointer"
+          >
+            Tamat
+          </Link>
+          <Link to="/schedule"
+            className="py-3 hover:text-orange-500 transition-colors hidden md:block cursor-pointer"
+          >
+            Jadwal Rilis
+          </Link>
         </div>
-    
+
         <div className="flex items-center">
-          <a href="/search"><IoIosSearch size={24} className="cursor-pointer" /></a>
-          
+          <Link to="/search">
+            <IoIosSearch size={24} className="cursor-pointer" />
+          </Link>
         </div>
       </div>
       <div
@@ -41,7 +60,6 @@ const Navbar = () => {
           isMenuOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-       
         <div className="flex justify-between items-center p-5 border-b border-gray-700">
           <p className="text-orange-500 font-bold">Menu</p>
           <IoMdClose
@@ -52,11 +70,33 @@ const Navbar = () => {
         </div>
 
         <div className="flex flex-col p-5 text-white">
-          <a href="/" className="py-3 hover:text-orange-500 transition-colors">Beranda</a>
-          <a href="/recent" className="py-3 hover:text-orange-500 transition-colors">Baru</a>
-          <a href="/populer" className="py-3 hover:text-orange-500 transition-colors">Populer</a>
-          <a href="/completed" className="py-3 hover:text-orange-500 transition-colors">Tamat</a>
-          <a href="/schedule" className="py-3 hover:text-orange-500 transition-colors">Jadwal Rilis</a>
+          <Link to="/" className="py-3 hover:text-orange-500 transition-colors">
+            Beranda
+          </Link>
+          <Link
+            to="/recent"
+            className="py-3 hover:text-orange-500 transition-colors"
+          >
+            Baru
+          </Link>
+          <Link
+            to="/populer"
+            className="py-3 hover:text-orange-500 transition-colors"
+          >
+            Populer
+          </Link>
+          <Link
+            to="/completed"
+            className="py-3 hover:text-orange-500 transition-colors"
+          >
+            Tamat
+          </Link>
+          <Link
+            to="/schedule"
+            className="py-3 hover:text-orange-500 transition-colors"
+          >
+            Jadwal Rilis
+          </Link>
         </div>
       </div>
     </>

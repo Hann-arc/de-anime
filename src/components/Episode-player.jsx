@@ -4,6 +4,7 @@ import { MdNavigateNext } from "react-icons/md";
 import { GrFormPrevious } from "react-icons/gr";
 import { RxHamburgerMenu } from "react-icons/rx";
 import ShowAll from "./Show-all";
+import { Link } from "react-router-dom";
 
 const EpisodePlayer = ({ episodeData }) => {
   const [selectedServerId, setSelectedServerId] = React.useState(null);
@@ -66,28 +67,25 @@ const EpisodePlayer = ({ episodeData }) => {
 
     <div className="mt-4 mx-5 flex gap-2 py-2">
         {episodeData.hasPrevEpisode && (
-          <a
-            href={`/stream/${episodeData?.prevEpisode?.episodeId}`}
+          <Link to={`/stream/${episodeData?.prevEpisode?.episodeId}`}
             className="items-center justify-center flex flex-1 text-center border border-orange-400  py-2 rounded transition hover:bg-orange-400 hover:text-black"
           >
             <GrFormPrevious size={"25px"}/>
-          </a>
+          </Link>
         )}
 
-        <a
-          href={`/detail/${episodeData?.animeId}`}
+        <Link to={`/detail/${episodeData?.animeId}`}
           className="items-center justify-center flex flex-1 text-center border border-orange-400  py-2 rounded transition hover:bg-orange-400 hover:text-black"
         >
           <RxHamburgerMenu  size={"20px"}/>
-        </a>
+        </Link>
 
         {episodeData.hasNextEpisode && (
-          <a
-            href={`/stream/${episodeData?.nextEpisode?.episodeId}`}
+          <Link to={`/stream/${episodeData?.nextEpisode?.episodeId}`}
             className="items-center justify-center flex flex-1 text-center border border-orange-400  py-2 rounded transition hover:bg-orange-400 hover:text-black"
           >
             <MdNavigateNext size={"25px"}/>
-          </a>
+          </Link>
         )}
       </div>
 

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -16,34 +17,34 @@ const Footer = () => {
           <h3 className="text-lg font-semibold mb-3">Navigasi</h3>
           <ul className="space-y-2 text-sm">
             <li>
-              <a href="/" className="hover:text-orange-500 transition">
+              <Link to="/" className="hover:text-orange-500 transition">
                 Beranda
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/recent" className="hover:text-orange-500 transition">
+              <Link to="/recent" className="hover:text-orange-500 transition">
                 Episode Terbaru
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/populer" className="hover:text-orange-500 transition">
+              <Link to="/populer" className="hover:text-orange-500 transition">
                 Anime Populer
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/completed" className="hover:text-orange-500 transition">
+              <Link to="/completed" className="hover:text-orange-500 transition">
                 Tamat
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/movie" className="hover:text-orange-500 transition">
+              <Link to="/movie" className="hover:text-orange-500 transition">
                 Anime Movie
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/schedule" className="hover:text-orange-500 transition">
+              <Link to="/schedule" className="hover:text-orange-500 transition">
                 Jadwal Rilis
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -53,34 +54,31 @@ const Footer = () => {
           <ul className="space-y-2 text-sm text-gray-400">
             <li>
               Email:{" "}
-              <a
-                href="mailto:muhammadfarhaan911@gmail.com"
+              <Link to="mailto:muhammadfarhaan911@gmail.com"
                 className="hover:text-orange-500 transition"
               >
                 muhammadfarhaan911@gmail.com
-              </a>
+              </Link>
             </li>
             <li>
               GitHub:{" "}
-              <a
-                href="https://github.com/Hann-arc"
+              <Link to="https://github.com/Hann-arc"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-orange-500 transition"
               >
                 Hann-arc
-              </a>
+              </Link>
             </li>
             <li>
               LinkedIn:{" "}
-              <a
-                href="https://www.linkedin.com/in/muhamad-farhaan/"
+              <Link to="https://www.linkedin.com/in/muhamad-farhaan/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-orange-500 transition"
               >
                 muhamad-farhaan
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -90,7 +88,7 @@ const Footer = () => {
           <p className="text-sm text-gray-400 leading-relaxed">
             Project ini terinspirasi dari{" "}
             <span className="text-orange-500">
-              <a href="https://www.crunchyroll.com">Churchroll</a>
+              <Link to="https://www.crunchyroll.com">Churchroll</Link>
             </span>{" "}
             dan bertujuan untuk memperluas kemampuan dalam membangun aplikasi
             berbasis web.
