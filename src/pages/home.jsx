@@ -1,5 +1,5 @@
 import React from "react";
-import AnimeCarousel from "../components/carousel";
+import AnimeCarousel from "../components/Carousel";
 import HeroCarousel from "../components/HeroCarousel";
 import { useGetTopPopulerCarousel } from "../services/use-get-populer";
 import { useGetRecentAnime } from "../services/use-get-recent";
@@ -8,6 +8,7 @@ import { Player } from "@lottiefiles/react-lottie-player";
 import Loading from "../components/Loading";
 import LoadingPage from "../assets/Loadingpage.json";
 import { useNavigation } from "../util/navigate/index";
+
 
 
 const Home = () => {
