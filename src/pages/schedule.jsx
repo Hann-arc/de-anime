@@ -1,7 +1,7 @@
 import { Player } from "@lottiefiles/react-lottie-player";
 import React from "react";
 import LoadingPage from "../assets/Loadingpage.json";
-import AnimeCarousel from "../components/carousel";
+import AnimeCarousel from "../components/Carousel";
 import { useGetScadule } from "../services/use-get-scedule";
 
 const Schedule = () => {
