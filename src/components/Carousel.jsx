@@ -3,6 +3,7 @@ const AnimeCarousel = ({ animeList, desk }) => {
   
  const { navigateToDetail } = useNavigation()
 
+ 
   return (
     <div className="w-full max-w-screen pr-5 pl-1 py-6 overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar md:pl-1">
       <div className="inline-flex space-x-4 cursor-pointer">

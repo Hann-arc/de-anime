@@ -9,6 +9,7 @@ import Loading from "../components/Loading";
 import LoadingPage from "../assets/Loadingpage.json";
 import { useNavigation } from "../util/navigate/index";
 
+
 const Home = () => {
   const { data: topPopuler, isLoading: loading } = useGetTopPopulerCarousel();
   const { data: home } = useGetRecentAnime();
