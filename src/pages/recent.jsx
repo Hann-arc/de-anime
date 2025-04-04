@@ -26,7 +26,7 @@ const Recent = () => {
     animeRecent?.pages.flatMap((page) => page.data.animeList) ?? [];
 
   return (
-    <div className="flex flex-col px-4 py-6">
+    <div className="flex flex-col px-4 py-6 overflow-hidden">
       <h2 className="text-2xl md:ml-5 ml-2 pt-5 pb-6 pl-0 md:text-3xl font-bold hover:text-orange-500 w-fit">
         Episode Terbaru
       </h2>

@@ -8,7 +8,7 @@ const Schedule = () => {
   const { data: schadule } = useGetScadule();
 
   return (
-    <div className="flex min-h-screen flex-col mt-10 gap-1">
+    <div className="flex min-h-screen flex-col mt-10 gap-1 overflow-hidden">
       <div className="flex flex-col px-4">
         {schadule?.data?.days?.length > 0 ? (
           schadule.data.days.map((dayItem, index) => (

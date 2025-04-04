@@ -19,7 +19,7 @@ const Search = () => {
   const {navigateToGenreById} = useNavigation()
   
   return (
-    <div className="w-full min-h-screen relative flex flex-col">
+    <div className="w-full min-h-screen relative flex flex-col overflow-hidden">
       <div className="flex relative mx-5 md:mx-80 mt-14">
         <input
           value={query}

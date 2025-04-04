@@ -18,7 +18,7 @@ const Genre = () => {
 
   if (loading) return <Loading />;
   return (
-    <div>
+    <div className="overflow-hidden">
       <ShowAll
         title={genreId}
         animeList={animeList}

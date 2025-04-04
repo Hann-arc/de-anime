@@ -17,7 +17,7 @@ const Completed = () => {
   if (loading) return <Loading />;
 
   return (
-    <div>
+    <div className="flex flex-col overflow-hidden">
       <ShowAll
         title={"Anime Tamat"}
         animeList={animeList}

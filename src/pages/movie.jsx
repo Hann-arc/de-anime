@@ -10,7 +10,7 @@ const Movie = () => {
   if (loading) return <Loading />;
 
   return (
-    <div>
+    <div className="overflow-hidden">
       <ShowAll title={"Anime Movie"} animeList={animeList} />
     </div>
   );
