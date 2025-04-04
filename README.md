@@ -70,5 +70,5 @@ src/
 
 ## 📝 Catatan Tambahan
 
-- **Ini hanya frontend**, sehingga data anime diambil dari API eksternal dari  [https://github.com/wajik45/wajik-anime-api/tree/8c61097](wajik-anime-api).
+- **Ini hanya frontend**, sehingga data anime diambil dari API eksternal dari  [wajik-anime-api](https://github.com/wajik45/wajik-anime-api/tree/8c61097).
 - Pastikan memiliki koneksi internet yang stabil untuk streaming anime.
