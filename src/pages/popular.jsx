@@ -17,7 +17,7 @@ const Popular = () => {
   if (loading) return <Loading />;
 
   return (
-    <div>
+    <div className="w-full min-h-screen overflow-x-hidden">
       <ShowAll
       title={"Anime Terpopuler"}
         animeList={animeList}

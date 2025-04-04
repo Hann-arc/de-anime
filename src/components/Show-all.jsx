@@ -8,7 +8,7 @@ const ShowAll = ({ animeList, next, hasMore, title }) => {
  const { navigateToDetail } = useNavigation()
 
   return (
-    <div className="flex flex-col gap-5">
+    <div className="flex  flex-col overflow-x-hidden  gap-5">
       <h2 className="text-2xl md:ml-5 ml-2 pt-10 pl-2 md:pl-0 md:text-3xl font-bold hover:text-orange-500 w-fit">
        {title}
       </h2>

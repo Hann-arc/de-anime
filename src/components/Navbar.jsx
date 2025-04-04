@@ -70,28 +70,32 @@ const Navbar = () => {
         </div>
 
         <div className="flex flex-col p-5 text-white">
-          <Link to="/" className="py-3 hover:text-orange-500 transition-colors">
+          <Link to="/" onClick={closeMenu} className="py-3 hover:text-orange-500 transition-colors">
             Beranda
           </Link>
           <Link
+          onClick={closeMenu}
             to="/recent"
             className="py-3 hover:text-orange-500 transition-colors"
           >
             Baru
           </Link>
           <Link
+          onClick={closeMenu}
             to="/populer"
             className="py-3 hover:text-orange-500 transition-colors"
           >
             Populer
           </Link>
           <Link
+          onClick={closeMenu}
             to="/completed"
             className="py-3 hover:text-orange-500 transition-colors"
           >
             Tamat
           </Link>
           <Link
+          onClick={closeMenu}
             to="/schedule"
             className="py-3 hover:text-orange-500 transition-colors"
           >
