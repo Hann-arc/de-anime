@@ -49,7 +49,7 @@ Project ini dibangun menggunakan beberapa teknologi dan library berikut:
    npm run dev
    ```
    
-4. **Buka di browser**:
+6. **Buka di browser**:
    [http://localhost:5173](http://localhost:5173)
 
 ## 📁 Struktur Direktori
