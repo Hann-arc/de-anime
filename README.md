@@ -41,7 +41,7 @@ Project ini dibangun menggunakan beberapa teknologi dan library berikut:
 4. **Buat file .env**:
    ```bash
    touch .env
-   # lalu sesuaikan berdasarkan .env.example
+   # lalu sesuaikan berdasarkan .env.example misal VITE_API_URL=https://wajik-anime-api.vercel.app/samehadaku
    ```
    
 5. **Jalankan server dilokal**:
