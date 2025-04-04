@@ -62,7 +62,8 @@ src/
 ├── lib/               # Konfigurasi API (api.js)
 ├── pages/             # Halaman utama aplikasi
 ├── route/             # Konfigurasi routing
-│   └── index.js       # Daftar rute utama   
+│   └── index.js       # Daftar rute utama
+├── services/          # Fetching API
 ├── util/   
 │    └── navigate/     # Hook navigasi
 └── App.js             # Root komponen
