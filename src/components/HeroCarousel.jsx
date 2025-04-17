@@ -17,19 +17,19 @@ const HeroCarousel = ({ slides }) => {
     pauseOnHover: true,
   };
 
- const { navigateToDetail } = useNavigation()
+ const { navigateToDetail } = useNavigation();
   return (
-    <Slider {...settings} className="relative">
+    <Slider {...settings} className="relative"> 
       {slides.map((slide) => (
         <div className="flex" key={slide.id}>
           <div
-            className="relative w-full h-[80vh] flex items-center justify-center md:justify-start 
+            className="relative w-full h-[60vh] md:h-[80vh] flex items-center justify-center md:justify-start 
                      bg-cover bg-center px-6 md:px-16"
             style={{ backgroundImage: `url(${slide.bgImage})` }}
           >
             <div className="absolute inset-0  max-md:backdrop-blur-sm md:backdrop-blur-md" />
             <div className="relative z-10 text-white max-w-lg text-center md:text-left">
-              <h2 className=" text-3xl md:text-5xl font-bold mb-4">
+              <h2 className=" text-2xl md:text-5xl font-bold mb-4">
                 {slide.title}
               </h2>
               {/* <p className="mb-6 text-sm md:text-base">{slide.description}</p> */}
