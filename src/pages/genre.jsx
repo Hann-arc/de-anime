@@ -15,12 +15,14 @@ const Genre = () => {
 
   const animeList =
     animeByGenre?.pages.flatMap((page) => page.data.animeList) ?? [];
+    
+  const title = genreId?.charAt(0).toUpperCase() + genreId.slice(1);
 
   if (loading) return <Loading />;
   return (
     <div className="overflow-hidden">
       <ShowAll
-        title={genreId}
+        title={title}
         animeList={animeList}
         next={fetchNextPage}
         hasMore={hasNextPage ?? false}
