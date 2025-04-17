@@ -8,16 +8,31 @@ import { Synopsis } from "../components/Synopsis";
 import { EpisodeList } from "../components/Episodes";
 import { AnimeDetails } from "../components/Anime-detail";
 import { useNavigation } from "../util/navigate/index";
-
+import { LuArrowUpDown } from "react-icons/lu";
 
 const Detail = () => {
-   const navigate = useNavigate();
+  const navigate = useNavigate();
   const { animeId } = useParams();
   const { data: detail, isLoading } = useGetDetailAnime(animeId);
   const { data: anime } = useGetAllAnime();
-  const {navigateToStreamById} = useNavigation()
+  const { navigateToStreamById } = useNavigation();
+  const [episodes, setEpisodes] = React.useState([]);
 
-  const firstId = detail?.data?.episodeList?.[detail?.data?.episodeList?.length - 1].episodeId
+  React.useEffect(() => {
+    if (detail?.data?.episodeList) {
+      setEpisodes(detail.data.episodeList);
+    }
+  }, [detail]);
+
+  const handleRevers = () => {
+    setEpisodes([...episodes].reverse());
+  };
+
+  console.log(detail)
+
+  const firstId =
+    detail?.data?.episodeList?.[detail?.data?.episodeList?.length - 1]
+      .episodeId;
   if (isLoading) {
     return <Loading />;
   }
@@ -33,7 +48,6 @@ const Detail = () => {
           ?.flatMap((section) => section.animeList)
           ?.find((a) => a.animeId === animeId)?.title ||
         "Judul Tidak Ditemukan";
-
   return (
     <div className="relative w-full flex flex-col mx-auto overflow-hidden">
       <div
@@ -59,7 +73,10 @@ const Detail = () => {
             ⭐{detail?.data?.score?.value} / {detail?.data?.score?.users} users
             |<span className="text-orange-400"> {detail?.data?.status}</span>
           </p>
-          <button onClick={() => navigateToStreamById(firstId)} className="cursor-pointer md:w-fit mt-4 flex justify-center md:justify-start items-center gap-2 bg-orange-600 hover:bg-orange-700 text-white px-4 py-2 rounded-lg transition">
+          <button
+            onClick={() => navigateToStreamById(firstId)}
+            className="cursor-pointer md:w-fit mt-4 flex justify-center md:justify-start items-center gap-2 bg-orange-600 hover:bg-orange-700 text-white px-4 py-2 rounded-lg transition"
+          >
             <FaPlay /> Tonton
           </button>
         </div>
@@ -68,15 +85,21 @@ const Detail = () => {
         <Synopsis paragraphs={detail?.data?.synopsis?.paragraphs || []} />
       </div>
       <div className="relative flex flex-col mx-8 overflow-hidden md:mt-24 mt-10">
-        <h1 className="text-white border-b-2 border-gray-600 pb-5 text-2xl font-bold mb-8">Daftar Episode</h1>
-        <EpisodeList
-          episodes={detail?.data?.episodeList}
-        />
+        <div className="flex w-full items-center gap-5 border-b-2 pb-5 mb-8  border-gray-600">
+          <h1 className="text-white  text-2xl font-bold ">
+            Daftar Episode
+          </h1>
+          <LuArrowUpDown onClick={() => handleRevers()} size={"19px"} className="cursor-pointer" />
+        </div>
+
+        <EpisodeList episodes={episodes} />
       </div>
       <div className="relative flex flex-col mx-8 md:mt-15 mt-10">
-        <h1  className="text-white border-b-2 border-gray-600 pb-5 text-2xl font-bold mb-8">Detail Anime</h1>
+        <h1 className="text-white border-b-2 border-gray-600 pb-5 text-2xl font-bold mb-8">
+          Detail Anime
+        </h1>
         <div>
-          <AnimeDetails AnimeDetails={detail?.data}/>
+          <AnimeDetails AnimeDetails={detail?.data} />
         </div>
       </div>
     </div>
