@@ -2,48 +2,53 @@ import React, { useState } from "react";
 import { IoIosSearch } from "react-icons/io";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoMdClose } from "react-icons/io";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
 
+  const menuItems = [
+    { path: "/recent", label: "Baru" },
+    { path: "/populer", label: "Populer" },
+    { path: "/completed", label: "Tamat" },
+    { path: "/schedule", label: "Jadwal Rilis" },
+  ];
+
+  const isActive = (path) => location?.pathname === path;
+
   return (
     <>
-      <div className="flex justify-between items-center text-white bg-[#222222] md:p-3 p-5 w-full">
-        <div className="flex items-center gap-x-6">
+      <div className="flex justify-between items-center bg-[#222222] md:p-3 p-5 w-full">
+        <div className="bg-inherit flex items-center gap-x-6">
           <RxHamburgerMenu
             size={24}
             className="cursor-pointer md:hidden"
             onClick={toggleMenu}
           />
-          <Link to="/" className="font-bold text-orange-500 cursor-pointer">
+          <Link to="/" className="text-orange-500 font-bold ">
             De-Anime
           </Link>
-          <Link to="/recent"
-            className="py-3 hover:text-orange-500 transition-colors hidden md:block cursor-pointer"
-          >
-            Baru
-          </Link>
-          <Link to="/populer"
-            className="py-3 hover:text-orange-500 transition-colors hidden md:block cursor-pointer"
-          >
-            Populer
-          </Link>
-          <Link to="/completed"
-            className="py-3 hover:text-orange-500 transition-colors hidden md:block cursor-pointer"
-          >
-            Tamat
-          </Link>
-          <Link to="/schedule"
-            className="py-3 hover:text-orange-500 transition-colors hidden md:block cursor-pointer"
-          >
-            Jadwal Rilis
-          </Link>
+
+          {menuItems.map((item) => (
+            <Link
+              key={item.path}
+              to={item.path}
+              className={`py-3 transition-colors hidden md:block cursor-pointer
+                ${
+                  isActive(item.path)
+                    ? "text-orange-500"
+                    : "hover:text-orange-500"
+                }`}
+            >
+              {item.label}
+            </Link>
+          ))}
         </div>
 
-        <div className="flex items-center">
+        <div className=" flex items-center">
           <Link to="/search">
             <IoIosSearch size={24} className="cursor-pointer" />
           </Link>
@@ -60,7 +65,7 @@ const Navbar = () => {
           isMenuOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        <div className="flex justify-between items-center p-5 border-b border-gray-700">
+        <div className="flex  justify-between items-center p-5 border-b border-gray-700">
           <p className="text-orange-500 font-bold">Menu</p>
           <IoMdClose
             size={24}
@@ -69,38 +74,34 @@ const Navbar = () => {
           />
         </div>
 
+        {/* mobile */}
+
         <div className="flex flex-col p-5 text-white">
-          <Link to="/" onClick={closeMenu} className="py-3 hover:text-orange-500 transition-colors">
+          <Link
+            to="/"
+            onClick={closeMenu}
+            className={`py-3 transition-colors ${
+              isActive("/") ? "text-orange-500" : "hover:text-orange-500"
+            }`}
+          >
             Beranda
           </Link>
-          <Link
-          onClick={closeMenu}
-            to="/recent"
-            className="py-3 hover:text-orange-500 transition-colors"
-          >
-            Baru
-          </Link>
-          <Link
-          onClick={closeMenu}
-            to="/populer"
-            className="py-3 hover:text-orange-500 transition-colors"
-          >
-            Populer
-          </Link>
-          <Link
-          onClick={closeMenu}
-            to="/completed"
-            className="py-3 hover:text-orange-500 transition-colors"
-          >
-            Tamat
-          </Link>
-          <Link
-          onClick={closeMenu}
-            to="/schedule"
-            className="py-3 hover:text-orange-500 transition-colors"
-          >
-            Jadwal Rilis
-          </Link>
+
+          {menuItems.map((item) => (
+            <Link
+              key={item.path}
+              to={item.path}
+              onClick={closeMenu}
+              className={`py-3 transition-colors
+                ${
+                  isActive(item.path)
+                    ? "text-orange-500"
+                    : "hover:text-orange-500"
+                }`}
+            >
+              {item.label}
+            </Link>
+          ))}
         </div>
       </div>
     </>
