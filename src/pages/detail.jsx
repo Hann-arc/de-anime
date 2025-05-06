@@ -28,8 +28,6 @@ const Detail = () => {
     setEpisodes([...episodes].reverse());
   };
 
-  console.log(detail)
-
   const firstId =
     detail?.data?.episodeList?.[detail?.data?.episodeList?.length - 1]
       .episodeId;
