@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { Api } from "../libs/api";
+import toast from "react-hot-toast";
 
 export function useSearchAnime(query) {
     return useQuery({
@@ -15,7 +16,7 @@ export function useSearchAnime(query) {
         staleTime: 5 * 60 * 1000,
         cacheTime: 10 * 60 * 1000,
         onError: (error) => {
-            console.error("Error fetching search results:", error);
+            toast.error("Error fetching search results:", error);
         },
     });
 }
